@@ -21,9 +21,8 @@ int main()
     double area = (b * altura) / 2;
     double perimetro = a + b + c;
 
-    printf("El area del triangulo es: %f\n", area);
+    printf("\nEl area del triangulo es: %f\n", area);
     printf("\nEl perimetro es : %lf", perimetro);
 
     return 0;
-
 }
