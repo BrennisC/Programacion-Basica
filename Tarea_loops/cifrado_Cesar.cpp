@@ -4,12 +4,12 @@
 using namespace std;
 int main()
 {
-    string texto = "Holamundo";
+    string cifrado = "ClaveAcceso";
     int clave;
-    cout << "El texto cifrado es : " << texto<<endl;
-    cout << "Ingrese su clave: ";
+    cout << "El texto cifrado : \n"<< cifrado;
+    cout << "\nIngrese su clave : \n";
     cin >> clave;
-    for (char &caracter : texto)
+    for (char &caracter : cifrado)
     {
         if (isalpha(caracter))
         {
@@ -17,8 +17,7 @@ int main()
             caracter = (caracter - base + clave) % 26 + base;
         }
     }
-
-    cout<<"\nCadena del cifrado es: "<<texto;
+    cout << "La contrasena cifrado es: " << cifrado;
 
     return 0;
 }
