@@ -1,0 +1,2 @@
+miro 
+lluvias de ideas 
