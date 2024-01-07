@@ -4,30 +4,32 @@ b.	Si n es impar, multiplícalo por 3 y suma 1.
 c.	Repite el proceso hasta llegar al número 1.
  */
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 int main()
 {
     int n;
-    cout << "Ingrese un numero positivo:  ";
+    cout << "Ingrese un valor positivo : ";
     cin >> n;
+    system("cls");
     while (n <= 0)
     {
-        cout << "Por favor ingrese un numero positivo :  ";
+        cout << "Por favor ingrese un numero positivo";
         cin >> n;
     }
-    cout << "La secuencia de  " << n << " es: " << endl;
+    cout<<"La secuencia de : "<<n<<" es :\n";
     while (n != 1)
     {
-        cout << n << " ";
+        cout<<n<<" ";
         if (n % 2 == 0)
         {
             n /= 2;
         }
         else
         {
-            n = 3 * n + 1;
+            n = 3*n + 1;
         }
     }
-    cout << n << endl;
+    cout<<n<<endl;
     return 0;
 }
