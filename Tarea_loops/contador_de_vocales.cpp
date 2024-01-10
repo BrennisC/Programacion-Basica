@@ -10,9 +10,9 @@ int main()
     cout << "Ingrese su oracion : ";
     getline(cin, oracion);
 
-    for ( char letra :  oracion )
+    for (char letra : oracion)
     {
-        letra = tolower (letra);
+        letra = tolower(letra);
 
         switch (letra)
         {
@@ -33,29 +33,26 @@ int main()
             break;
         }
     }
-/*  int suma = 0;
-    conteo_a = 0;
-    conteo_e = 0;
-    conteo_i = 0;
-    conteo_o = 0;
-    conteo_u = 0;
-    while (suma)
-    {
-        if (conteo_a != 0)
+    /*  int suma = 0;
+        conteo_a = 0;
+        conteo_e = 0;
+        conteo_i = 0;
+        conteo_o = 0;
+        conteo_u = 0;
+        while (suma)
         {
-            suma += conteo_a;
-        }
-    } */
-    
+            if (conteo_a != 0)
+            {
+                suma += conteo_a;
+            }
+        } */
 
-    cout<<"Cantidad de vocales en la oracion: "<<endl;
-    cout<<" a "<<conteo_a<<endl;
-    cout<<" e "<<conteo_e<<endl;
-    cout<<" i "<<conteo_i<<endl;
-    cout<<" o "<<conteo_o<<endl;
-    cout<<" u "<<conteo_u<<endl;
-    
-
+    cout << "Cantidad de vocales en la oracion: " << endl;
+    cout << " a " << conteo_a << endl;
+    cout << " e " << conteo_e << endl;
+    cout << " i " << conteo_i << endl;
+    cout << " o " << conteo_o << endl;
+    cout << " u " << conteo_u << endl;
 
     return 0;
 }
