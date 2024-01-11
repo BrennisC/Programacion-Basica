@@ -26,27 +26,13 @@ int main()
             conteo_i++;
             break;
         case 'o':
-            conteo_o;
+            conteo_o++;
             break;
         case 'u':
             conteo_u++;
             break;
         }
     }
-    /*  int suma = 0;
-        conteo_a = 0;
-        conteo_e = 0;
-        conteo_i = 0;
-        conteo_o = 0;
-        conteo_u = 0;
-        while (suma)
-        {
-            if (conteo_a != 0)
-            {
-                suma += conteo_a;
-            }
-        } */
-
     cout << "Cantidad de vocales en la oracion: " << endl;
     cout << " a " << conteo_a << endl;
     cout << " e " << conteo_e << endl;
