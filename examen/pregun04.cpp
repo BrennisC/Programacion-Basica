@@ -6,7 +6,7 @@ int main()
     bool yes = !0;
     bool no = !yes;
     if (!no)
-        cout << true;
+        cout << "true";
     else
-        cout << false;
+        cout << "false";
 }
