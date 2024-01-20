@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    vector<int> numeros = {1, 6, 7, 4, 3, 2, 8, 9};
+    vector<int> numeros = {1, 6};
 
     cout << "Ingrese valores (ingrese un valor negativo para terminar):" << endl;
 
