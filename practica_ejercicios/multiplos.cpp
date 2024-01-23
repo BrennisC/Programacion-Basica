@@ -9,18 +9,17 @@ int numers(string a, string b)
         {
             cout << a << "  " << b << endl;
         }
-        if (i % 3 == 0)
+        else if (i % 3 == 0)
         {
             cout << a << endl;
         }
-        if (i % 5 == 0)
+        else if (i % 5 == 0)
         {
             cout << b << endl;
         }
         else
         {
             cout << i << endl;
-            y++;
         }
     }
     return y;

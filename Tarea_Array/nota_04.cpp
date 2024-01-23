@@ -55,7 +55,6 @@ int main()
         for (int j = 0; j < column; ++j)
         {
             suma[i][j] = n[i][j] + m[i][j];
-            resultado[i][j] = suma[i][j];
         }
     }
     for (int i = 0; i < row; ++i)
@@ -66,8 +65,6 @@ int main()
         }
         cout << endl;
     }
-
-    cout << resultado;
 
     return 0;
 }

@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
-struct Estudiantes
+struct Estudiante
 {
     string nombre;
     vector<float> calificaciones;
@@ -14,34 +15,37 @@ int main()
     cout << "Ingrese la cantidad de estudiantes: ";
     cin >> n;
 
-    vector<Estudiantes> Estudiante(n);
-    int suma = 0;
+    vector<Estudiante> estudiantes(n);
 
     for (int i = 0; i < n; ++i)
     {
         cout << "Ingrese el nombre del estudiante: ";
-        cin >> Estudiante[i].nombre;
+        cin >> estudiantes[i].nombre;
 
-        cout << "Ingrese la nota del estudiante: ";
-        float nota;
-        cin >> nota;
-
-        Estudiante[i].calificaciones.push_back(nota);
-        suma += nota;
+        cout << "Ingrese las calificaciones del estudiante " << estudiantes[i].nombre << ":" << endl;
+        for (int j = 0; j < 5; j++)
+        {
+            float calificacion;
+            cout << "Ingrese la nota " << j + 1 << ": ";
+            cin >> calificacion;
+            estudiantes[i].calificaciones.push_back(calificacion);
+        }
     }
+
+    cout << "\nPromedio de calificaciones para cada estudiante:" << endl;
 
     for (int i = 0; i < n; ++i)
     {
-        cout << "Notas del estudiante " << Estudiante[i].nombre << ": ";
-        for (float nota : Estudiante[i].calificaciones)
+        float suma = 0;
+        for (float nota : estudiantes[i].calificaciones)
         {
-            cout << nota << " ";
+            suma += nota;
         }
-        cout << endl;
-    }
 
-    double promedio = static_cast<double>(suma) / n;
-    cout << "Promedio: " << promedio;
+        double promedio = suma / estudiantes[i].calificaciones.size();
+
+        cout << "Estudiante: " << estudiantes[i].nombre << " - Promedio: " << promedio << endl;
+    }
 
     return 0;
 }
