@@ -1,1 +1,9 @@
+Planta 1:
+Nombre: credo
+Cantidad: 2
+Precios:
+2.5
+El pago total es : 52.5
+El pago total es : 5
+-----------------------------
 

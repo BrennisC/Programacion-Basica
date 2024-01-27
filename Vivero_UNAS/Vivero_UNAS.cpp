@@ -8,45 +8,53 @@
 
 using namespace std;
 
-const string CONTRASENA_CORRECTA = "veviro_unas";
+const string CONTRASENA_CORRECTA = "vivero_unas"; // para poder accerder a los metodos de la clase que hereda la estructura
 
 bool verificarContrasena()
 {
     string contrasenaIngresada;
     cout << "Ingrese la contraseña: ";
     getline(cin, contrasenaIngresada);
-    system("cls");
+    system("cls"); // para limpiar el buffer
     return contrasenaIngresada == CONTRASENA_CORRECTA;
 }
 
-struct Plantas
+struct Plantas //  estructura de plantas para el vivero
 {
     string nombre_plantas;
     int cantidad_plantas;
-    float precios;
+    vector<float> precios;
 };
-
-void Registro(vector<Plantas> &registro)
+struct Adono
+{
+    string nombre_abono;
+    float precio_adono;
+};
+void Registro(vector<Plantas> &registro) // registro de las plantas de vivero
 {
     cout << "\t\t*****BIENVENIDOS AL REGISTRO*****\n\n";
 
-    int tamano;
+    int tamanio;
     cout << "Ingrese la cantidad de plantas: ";
-    cin >> tamano;
+    cin >> tamanio;
     cin.ignore();
 
-    registro.resize(tamano);
+    registro.resize(tamanio);
 
-    for (int i = 0; i < tamano; i++)
+    for (int i = 0; i < tamanio; i++)
     {
+        float pago;
         cout << "Ingrese el nombre de la planta " << i + 1 << ": " << endl;
         getline(cin, registro[i].nombre_plantas);
 
         cout << "Ingrese la cantidad de plantas " << i + 1 << ": " << endl;
         cin >> registro[i].cantidad_plantas;
-
-        cout << "Ingrese el precio de la planta " << i + 1 << ": " << endl;
-        cin >> registro[i].precios;
+        for (int j = 0; j < registro[i].cantidad_plantas; j++)
+        {
+            cout << "Ingrese el precio de la planta " << j + 1 << ": " << endl;
+            cin >> pago;
+            registro[i].precios.push_back(pago);
+        }
 
         cin.ignore();
 
@@ -55,7 +63,7 @@ void Registro(vector<Plantas> &registro)
     system("cls");
 }
 
-void mostrarRegistro(const vector<Plantas> &registro)
+void mostrarRegistro(const vector<Plantas> &registro) // muestra los datos a ingresar al usuario
 {
     cout << "\t\t*****REGISTRO DE PLANTAS*****\n\n";
 
@@ -64,9 +72,13 @@ void mostrarRegistro(const vector<Plantas> &registro)
         cout << "Planta " << i + 1 << ":\n";
         cout << "Nombre: " << registro[i].nombre_plantas << endl;
         cout << "Cantidad: " << registro[i].cantidad_plantas << endl;
-        cout << "Precio: " << registro[i].precios << endl;
+        for (float precio : registro[i].precios)
+        {
+            cout << "Precio: S/. " << precio << endl;
+        }
         cout << "\n";
     }
+    getch();
     system("cls");
 }
 
@@ -81,7 +93,15 @@ void salirdelSistema(const vector<Plantas> &registro)
             archivo << "Planta " << i + 1 << ":\n";
             archivo << "Nombre: " << registro[i].nombre_plantas << endl;
             archivo << "Cantidad: " << registro[i].cantidad_plantas << endl;
-            archivo << "Precio: " << registro[i].precios << endl;
+            archivo << "Precios:" << endl;
+            for (float dato : registro[i].precios)
+            {
+                archivo << dato << endl;
+                float pago;
+                float total = static_cast<float>(dato) * registro[i].cantidad_plantas;
+                archivo << "El pago total es : " << total;
+            }
+            archivo << "\n-----------------------------\n";
             archivo << "\n";
         }
 
@@ -94,8 +114,8 @@ void salirdelSistema(const vector<Plantas> &registro)
 
     cout << "Has salido del sistema.\n";
     getch();
-    system("cls");
     exit(0);
+    system("cls");
 }
 
 void Menu()
@@ -137,7 +157,7 @@ void Menu()
             cout << "Opcion no valida.\n";
             break;
         }
-    } while (opc != 3);
+    } while (opc != 4);
 }
 
 int main()

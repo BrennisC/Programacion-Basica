@@ -3,7 +3,7 @@
 #include <string.h>
 #include <conio.h>
 
-#define lugares_disponibles 1
+#define lugares_disponibles 5
 
 struct Zoologico
 {
@@ -13,7 +13,7 @@ struct Zoologico
     int DNI[8];
 };
 
-void registroDatosZoo(struct Zoologico registro[lugares_disponibles])
+void registroDatosZoo(Zoologico registro[lugares_disponibles])
 {
     printf("\t\t\tREGISTRO DE VISITAS\n\n\n");
 

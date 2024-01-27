@@ -1,0 +1,35 @@
+void salirdelSistema(const vector<Plantas> &registro)
+{
+    ofstream archivo("registro.txt");
+
+    if (archivo.is_open())
+    {
+        for (size_t i = 0; i < registro.size(); i++)
+        {
+            archivo << "Planta " << i + 1 << ":\n";
+            archivo << "Nombre: " << registro[i].nombre_plantas << endl;
+            archivo << "Cantidad: " << registro[i].cantidad_plantas << endl;
+            archivo << "Precios:" << endl;
+            for (float dato : registro[i].precios)
+            {
+                archivo << dato << endl;
+                float pago;
+                float total = static_cast<float>(dato) * registro[i].cantidad_plantas;
+                archivo << "El pago total es : " << total;
+            }
+            archivo << "\n-----------------------------\n";
+            archivo << "\n";
+        }
+
+        archivo.close();
+    }
+    else
+    {
+        cout << "Error al abrir el archivo para almacenar los datos.\n";
+    }
+
+    cout << "Has salido del sistema.\n";
+    getch();
+    exit(0);
+    system("cls");
+}
