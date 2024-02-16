@@ -1,0 +1,36 @@
+/*
+Paradigma POOS
+
+--> Clases(Nombre, atributos, metodos(funciones))
+-->Objetos(instancia(individual) de clase)
+
+Pilares de POO
+
+-->Abstraccion
+-->Polimorfismo(Sobecarga, sobre escritura)
+-->Herencia(Padres y hijos)
+-->Encapsulamiento(caja negra)
+
+Silla 
+string nombre
+string codigo
+int cantidad
+
+static 
+Antes de la creacion de la Clases
+
+Modulo 3:
+manejos de errores try-cath-throw
+Direcciones de memorias, dentro de una memoria
+
+Clases y objetos en la vida real
+
+Una programacion orientada a objetos
+
+En el enfoque procedimental mundos diferentes y separados
+----------------------------------
+Una clase es un conjunto de objetos, Un objeto es un perteneciente a una clase
+superclases y subclases
+Herencia 
+todos los rasgos                                                                         
+*/
