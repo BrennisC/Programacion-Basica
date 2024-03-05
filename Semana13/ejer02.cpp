@@ -1,4 +1,6 @@
 #include <iostream>
+#include <time.h>
+#include <cstdlib>
 using namespace std;
 class SuperHeroes
 {
@@ -37,12 +39,12 @@ public:
 class CalcularPoder
 {
 public:
-    Vengadores vg;
-    float calcularPoder()
+    float calcularPoder(Vengadores vg)
     {
-        int cantidad_poder;
-        cout << "Ingrese la cantidad de poder para hacer el calculo: ";
-        cin >> cantidad_poder;
+        srand(time(NULL));
+
+        int cantidad_poder = rand() % 100 + 1;
+
         vg.setCantidad(cantidad_poder);
         cout << "Entonces la cantidad de poder es : " << vg.getCantidad() * 1000 << endl;
         return vg.getCantidad() * 1000;
@@ -51,8 +53,7 @@ public:
 class Vuelo
 {
 public:
-    Vengadores vg;
-    bool checkVolando()
+    bool checkVolando(Vengadores vg)
     {
         if (vg.getVolar())
         {
@@ -71,8 +72,8 @@ int main()
     vg.mostrar();
     CalcularPoder cp;
     Vuelo vl;
-    cp.calcularPoder();
-    vl.checkVolando();
+    cp.calcularPoder(vg);
+    vl.checkVolando(vg);
     vg.mostrar();
     return 0;
 }
