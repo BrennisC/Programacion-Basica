@@ -12,8 +12,7 @@ int main()
 
     vector<int> cuadrados;
 
-    transform(numero.begin(), numero.end(), back_inserter(cuadrados), [](int num_cuadras) 3
-              { return num_cuadras * num_cuadras; });
+    transform(numero.begin(), numero.end(), back_inserter(cuadrados), [](int num_cuadras) { return num_cuadras * num_cuadras; });
 
     for (int num : cuadrados)
     {
